@@ -69,3 +69,7 @@ CSM Support
 ## Radeon Sensor
 
 https://github.com/aluveitie/RadeonSensor
+
+## Adobe support
+
+https://github.com/NyaomiDEV/AMDFriend
