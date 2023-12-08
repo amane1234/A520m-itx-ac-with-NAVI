@@ -10,7 +10,7 @@ EFI for A520m-itx/ac ryzen cpu and NAVI GPU
 | CPU              | Ryzen 3300x                        |
 | dGPU             | Sapphire RX 5700XT                 |
 | Mainboard        | ASRock A520m-itx/ac                |
-| NVMe             | MICRON 256 GB                      |
+| NVMe             | WD Blue SN570 NVMe                 |
 | SmBios           | MacPro 7,1                         |
 | BootLoader       | OpenCore 0.9.6                     |
 | macOS            | Sonoma                             |
