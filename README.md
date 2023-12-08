@@ -57,7 +57,7 @@ https://github.com/corpnewt/GenSMBIOS
 
 ## Bios settings
 ### Enable :
-Resizable BAR Support
+Resizable BAR Support / 
 Above 4G encoding
 
 
