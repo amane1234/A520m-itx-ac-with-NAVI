@@ -64,3 +64,7 @@ Above 4G encoding
 
 ### Disable : 
 CSM Support
+
+## Radeon Sensor
+
+https://github.com/aluveitie/RadeonSensor
