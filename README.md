@@ -24,7 +24,9 @@ itlwm / Airportitlwm : https://github.com/OpenIntelWireless/itlwm
 Heliport : https://github.com/OpenIntelWireless/HeliPort
 
 
-## What works:
+## Function / Bugs:
+
+### Functions:
 
 Every function (including Sleep at S3) works well.
 
