@@ -34,11 +34,8 @@ Every function (including Sleep at S3) works well.
 ### Bugs:
 
 - Blackscreen after wake-up and POST randomly.
-
 - A2 Error (Boot device undetected) during POST.
-
 - Since intel Wi-Fi/Bluetooth are not officially supported in MacOS, it might be laggy.
-  
 
 ASRock motherboards are not good for hackintoshing, change your motherboard into different manufacture (ASUS,GIGABYTE) will resolve blackscreen errors.
 
