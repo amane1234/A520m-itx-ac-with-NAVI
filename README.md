@@ -70,6 +70,26 @@ CSM Support
 
 https://github.com/aluveitie/RadeonSensor
 
+
 ## Adobe support
 
 https://github.com/NyaomiDEV/AMDFriend
+
+
+## Disable SSDT injection for Windows OS Dual boot
+
+Download the correct OpenCore_NO_ACPI_Build that matches your OpenCore version and unzip it 
+
+https://github.com/wjz304/OpenCore_NO_ACPI_Build/releases
+
+Replace the following files in your EFI Folder:
+
+    BootX64.efi (in EFI/Boot)
+    OpenCore.efi (in EFI/OC)
+    Any Drivers you use (in EFI/OC/Drivers)
+    Any Tools you use (in EFI/OC/Tools)
+
+Add the following Keys to your config.plist:
+
+    Under ACPI/Quirks, add: EnableForAll (Type: Boolean) and set it to NO
+    Under Booter/Quirks, add: EnableForAll (Type: Boolean) and set it to NO
