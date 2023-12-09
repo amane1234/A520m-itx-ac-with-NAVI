@@ -90,9 +90,9 @@ https://github.com/NyaomiDEV/AMDFriend
 
 ## Disable ACPI injections for OS multi booting by using OpenCore_NO_ACPI_Build
 
-If you are using Ryzentosh and Windows, I personally recommand to use NO_ACPI_Build version of OC.
-
 Ryzentosh requires a lot of SSDT / Patch / Quirks modifications, which are the main reasons of BSOD.
+
+Thus, if you are using Ryzentosh and Windows, I personally recommand to use NO_ACPI_Build version of OC.
 
 
 ### How to:
