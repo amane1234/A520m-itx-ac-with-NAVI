@@ -76,7 +76,13 @@ https://github.com/aluveitie/RadeonSensor
 https://github.com/NyaomiDEV/AMDFriend
 
 
-## Disable SSDT injection for Windows OS Dual boot
+## Disable ACPI injections for OS multi booting by using OpenCore_NO_ACPI_Build
+
+If you are using Ryzentosh and Windows, I personally recommand to use NO_ACPI_Build version of OC.
+
+Ryzentosh requires a lot of SSDT / Patch / Quirks modifications, which are the main reasons of BSOD.
+
+### How to:
 
 Download the correct OpenCore_NO_ACPI_Build that matches your OpenCore version and unzip it 
 
