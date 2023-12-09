@@ -3,6 +3,7 @@
 EFI for A520m-itx/ac ryzen cpu and NAVI GPU
 
 
+
 ## Desktop Spec
 
 | Component        | Brank                              |
@@ -16,6 +17,7 @@ EFI for A520m-itx/ac ryzen cpu and NAVI GPU
 | macOS            | Sonoma                             |
 
 
+
 ## Intel WIFI/BT
 You need to manually download and install itlwm.kext (or airportitlwm.kext) to use WIFI
 
@@ -26,9 +28,11 @@ Heliport : https://github.com/OpenIntelWireless/HeliPort
 
 ## Function / Bugs
 
+
 ### Functions:
 
 Every function (including Sleep at S3) works well.
+
 
 
 ### Bugs:
@@ -40,6 +44,7 @@ Every function (including Sleep at S3) works well.
 ASRock motherboards are not good for hackintoshing, change your motherboard into different manufacture (ASUS,GIGABYTE) will resolve blackscreen errors.
 
 
+
 ## SMBIOS
 
 This hackintosh EFI uses MacPro 7,1 SMBIOS.
@@ -49,6 +54,7 @@ Create your own MacPro 7,1 SMBIOS with GenSMBIOS
 https://github.com/corpnewt/GenSMBIOS
 
 
+
 ## MacOS bootable USB creation
 
 - Read the Dortania guide for creating your USB from Windows or macOS
@@ -56,19 +62,24 @@ https://github.com/corpnewt/GenSMBIOS
 - Download EFI and copy it to your USB drive.
 
 
+
 ## Bios settings
+
 
 ### Enable :
 Resizable BAR Support / 
 Above 4G encoding
 
 
+
 ### Disable : 
 CSM Support
+
 
 ## Radeon Sensor
 
 https://github.com/aluveitie/RadeonSensor
+
 
 
 ## Adobe support
@@ -76,11 +87,13 @@ https://github.com/aluveitie/RadeonSensor
 https://github.com/NyaomiDEV/AMDFriend
 
 
+
 ## Disable ACPI injections for OS multi booting by using OpenCore_NO_ACPI_Build
 
 If you are using Ryzentosh and Windows, I personally recommand to use NO_ACPI_Build version of OC.
 
 Ryzentosh requires a lot of SSDT / Patch / Quirks modifications, which are the main reasons of BSOD.
+
 
 ### How to:
 
