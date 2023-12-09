@@ -31,7 +31,7 @@ Heliport : https://github.com/OpenIntelWireless/HeliPort
 
 ### Functions:
 
-Every function works except Apple airportcard required ones such as Sidecar and airdrop. 
+Every function works except Apple airportcard required ones ,such as sidecar and airdrop. 
 
 You may swap your wifi card into natively supported devices BCM94360 or BCM94350 with OCLP patcher to work these functions properly.
 
@@ -78,13 +78,14 @@ Above 4G encoding
 CSM Support
 
 
+
 ## Radeon Sensor
 
 https://github.com/aluveitie/RadeonSensor
 
 
 
-## Adobe support
+## Adobe support for ryzen hackintosh devices
 
 https://github.com/NyaomiDEV/AMDFriend
 
@@ -92,9 +93,10 @@ https://github.com/NyaomiDEV/AMDFriend
 
 ## Disable ACPI injections for OS multi booting by using OpenCore_NO_ACPI_Build
 
-Ryzentosh requires a lot of SSDT / Patch / Quirks modifications, which are the main reasons of BSOD.
+Ryzentosh requires a lot of SSDT / Patch / Quirks modifications, which are the main reasons of BSOD in Windows.
 
-Thus, if you are using Ryzentosh and Windows, I personally recommand to use NO_ACPI_Build version of OC.
+If you are using Ryzentosh and Windows, I personally recommand to use NO_ACPI_Build version of OC.
+
 
 
 ### How to:
