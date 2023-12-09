@@ -37,7 +37,7 @@ Every function (including Sleep at S3) works well.
 
 ### Bugs:
 
-- Blackscreen after wake-up and POST randomly.
+- Random blackscreen during POST and after hibernation wake-up.
 - A2 Error (Boot device undetected) during POST.
 - Since intel Wi-Fi/Bluetooth are not officially supported in MacOS, it might be laggy.
 
