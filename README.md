@@ -31,7 +31,9 @@ Heliport : https://github.com/OpenIntelWireless/HeliPort
 
 ### Functions:
 
-Every function (including Sleep at S3) works well.
+Every function works except Apple airportcard required ones such as Sidecar and airdrop. 
+
+You may swap your wifi card into natively supported devices BCM94360 or BCM94350 with OCLP patcher to work these functions properly.
 
 
 
