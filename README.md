@@ -40,7 +40,7 @@ You may swap your wifi card into natively supported devices BCM94360 or BCM94350
 ### Bugs:
 
 - Random blackscreen during POST and after hibernation wake-up.
-- A2 Error (Boot device undetected) during POST.
+- A2 Error (Boot device undetected) during POST. (Rare)
 - Since intel Wi-Fi/Bluetooth are not officially supported in MacOS, it might be laggy.
 
 ASRock motherboards are not good for hackintoshing, change your motherboard into different manufactures such as ASUS,GIGABYTE may resolve blackscreen errors.
@@ -114,5 +114,5 @@ Replace the following files in your EFI Folder:
 
 Add the following Keys to your config.plist:
 
-    Under ACPI/Quirks, add: EnableForAll (Type: Boolean) and set it to NO
-    Under Booter/Quirks, add: EnableForAll (Type: Boolean) and set it to NO
+    Under ACPI/Quirks, add: EnableForAll (Type: Boolean) and set it to False
+    Under Booter/Quirks, add: EnableForAll (Type: Boolean) and set it to False
