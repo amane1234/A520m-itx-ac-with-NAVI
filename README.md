@@ -1,6 +1,6 @@
 # A520m-itx/ac ryzen Hackintosh
 
-EFI for A520m-itx/ac ryzen cpu and NAVI GPU
+Opencore EFI for A520m-itx/ac ryzen cpu and NAVI GPU
 
 
 
@@ -43,8 +43,9 @@ You may swap your wifi card into natively supported devices BCM94360 or BCM94350
 - A2 Error (Boot device undetected) during POST. (Rare)
 - Since intel Wi-Fi/Bluetooth are not officially supported in MacOS, it might be laggy.
 
-ASRock motherboards are not good for hackintoshing, change your motherboard into different manufactures such as ASUS,GIGABYTE may resolve blackscreen errors.
+ASRock motherboards are not good for hackintoshing, change your motherboard into different manufactures such as ASUS,GIGABYTE may resolve A2 Boot errors.
 
+If you experience blackscreen/unresponsiveness before OC picker, you may try manual boot config with efibootmgr.
 
 
 ## SMBIOS
