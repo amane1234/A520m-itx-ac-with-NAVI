@@ -13,8 +13,8 @@ Opencore EFI for A520m-itx/ac ryzen cpu and NAVI GPU
 | Mainboard        | ASRock A520m-itx/ac                |
 | NVMe             | WD Blue SN570 NVMe                 |
 | SmBios           | MacPro 7,1                         |
-| BootLoader       | OpenCore 0.9.6                     |
-| macOS            | Sonoma                             |
+| BootLoader       | OpenCore 1.0.0                     |
+| macOS            | Sonoma 14.4                        |
 
 
 
@@ -33,19 +33,20 @@ Heliport : https://github.com/OpenIntelWireless/HeliPort
 
 Every function works except Apple airportcard required ones ,such as sidecar and airdrop. 
 
-You may swap your wifi card into natively supported devices BCM94360 or BCM94350 with OCLP patcher to work these functions properly.
+You may swap your wifi card into natively supported devices BCM94360 or BCM94350 with OCLP patcher to work these functions properly. My recommandation is wireless modules from "Fenvi"
 
 
 
 ### Bugs:
 
-- Random blackscreen during POST and after hibernation wake-up.
-- A2 Error (Boot device undetected) during POST. (Rare)
+- Random blackscreen during POST.
+- A2 Error (Boot device undetected) during POST.
 - Since intel Wi-Fi/Bluetooth are not officially supported in MacOS, it might be laggy.
 
 ASRock motherboards are not good for hackintoshing, change your motherboard into different manufactures such as ASUS,GIGABYTE may resolve A2 Boot errors.
+(Seems ASRock motherboards sometimes cannot recongnize Bootstrap related efi partitions)
 
-If you experience blackscreen/unresponsiveness before OC picker, you may try manual boot config with efibootmgr.
+If you experience blackscreen/unresponsiveness before OC picker, you may try manual boot config with efibootmgr : https://www.reddit.com/r/hackintosh/comments/fj3zrj/booting_opencore_without_the_usb_on_an_asrock/
 
 
 ## SMBIOS
@@ -63,7 +64,7 @@ https://github.com/corpnewt/GenSMBIOS
 - Read the Dortania guide for creating your USB from Windows or macOS
 - [Guide Dortania](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/) - USB creation
 - Download EFI and copy it to your USB drive.
-
+- Replace SMBIOS parameters.
 
 
 ## Bios settings
@@ -80,23 +81,24 @@ CSM Support
 
 
 
-## Radeon Sensor
+## (Optional) Radeon Sensor
 
 https://github.com/aluveitie/RadeonSensor
 
 
 
-## Adobe support for ryzen hackintosh devices
+## (Optional) Adobe support for ryzen hackintosh devices
 
 https://github.com/NyaomiDEV/AMDFriend
 
+Since photoshop 25, no additional adobe patch is required.
 
 
 ## Disable ACPI injections for OS multi booting by using OpenCore_NO_ACPI_Build
 
 Ryzentosh requires a lot of SSDT / Patch / Quirks modifications, which are the main reasons of BSOD in Windows.
 
-If you are using Ryzentosh and Windows, I personally recommand to use NO_ACPI_Build version of OC.
+If you are using Ryzentosh and Windows, I recommand to use NO_ACPI_Build version of OC.
 
 
 
