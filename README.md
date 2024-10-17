@@ -14,12 +14,13 @@ Opencore EFI for A520m-itx/ac ryzen cpu and NAVI GPU
 | NVMe             | WD Blue SN570 NVMe                 |
 | SmBios           | MacPro 7,1                         |
 | BootLoader       | OpenCore 1.0.0                     |
-| macOS            | Sonoma 14.4                        |
+| macOS            | Sequoia 15.1                       |
 
 
 
 ## Intel WIFI/BT
-You need to manually download and install itlwm.kext (or airportitlwm.kext) to use WIFI
+
+You need to manually download and install itlwm.kext (or airportitlwm.kext) to use intel WIFI
 
 itlwm / Airportitlwm : https://github.com/OpenIntelWireless/itlwm
 
@@ -31,22 +32,21 @@ Heliport : https://github.com/OpenIntelWireless/HeliPort
 
 ### Functions:
 
-Every function works except Apple airportcard required ones ,such as sidecar and airdrop. 
+Everything works except Apple airportcard required functions, and S4(Hibernation) sleep.
 
-You may swap your wifi card into natively supported devices BCM94360 or BCM94350 with OCLP patcher to work these functions properly. My recommandation is wireless modules from "Fenvi"
+You may swap your wifi card into natively supported devices, such as BCM94360 or BCM94350, with patches from OCLP to work these functions properly.
 
 
 
 ### Bugs:
 
-- Random blackscreen during POST.
+- Random blackscreen during POST. Changing securebootmodel into "Disabled" seems mitigate random blackscreen.
 - A2 Error (Boot device undetected) during POST.
 - Since intel Wi-Fi/Bluetooth are not officially supported in MacOS, it might be laggy.
 
-ASRock motherboards are not good for hackintoshing, change your motherboard into different manufactures such as ASUS,GIGABYTE may resolve A2 Boot errors.
-(Seems ASRock motherboards sometimes cannot recongnize Bootstrap related efi partitions)
+ASRock motherboards are actually not good for hackintoshing, change your motherboard into different manufactures such as ASUS,GIGABYTE may resolve A2 Boot errors.
 
-If you experience blackscreen/unresponsiveness before OC picker, you may try manual boot config with efibootmgr : https://www.reddit.com/r/hackintosh/comments/fj3zrj/booting_opencore_without_the_usb_on_an_asrock/
+Plus, instead of disabling Apple secureboot, you may try manual boot config with efibootmgr : https://www.reddit.com/r/hackintosh/comments/fj3zrj/booting_opencore_without_the_usb_on_an_asrock/
 
 
 ## SMBIOS
@@ -80,25 +80,18 @@ Above 4G encoding
 CSM Support
 
 
-
-## (Optional) Radeon Sensor
-
-https://github.com/aluveitie/RadeonSensor
-
-
-
 ## (Optional) Adobe support for ryzen hackintosh devices
 
 https://github.com/NyaomiDEV/AMDFriend
 
-Since photoshop 25, no additional adobe patch is required.
+Since photoshop 25, no adobe patch is required.
 
 
 ## Disable ACPI injections for OS multi booting by using OpenCore_NO_ACPI_Build
 
 Ryzentosh requires a lot of SSDT / Patch / Quirks modifications, which are the main reasons of BSOD in Windows.
 
-If you are using Ryzentosh and Windows, I recommand to use NO_ACPI_Build version of OC.
+If you are dual-booting both Ryzen hackintosh and Windows OS, I recommand to use NO_ACPI_Build version of OC.
 
 
 
