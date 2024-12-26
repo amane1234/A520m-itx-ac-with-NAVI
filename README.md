@@ -1,111 +1,115 @@
-# A520m-itx/ac ryzen Hackintosh
 
-Opencore EFI for A520m-itx/ac ryzen cpu and NAVI GPU
+---
 
+# A520M-ITX/AC Ryzen Hackintosh
 
+**OpenCore EFI for ASRock A520M-ITX/AC with Ryzen CPU and NAVI GPU**
 
-## Desktop Spec
+---
 
-| Component        | Brank                              |
+## Desktop Specifications
+
+| **Component**    | **Brand/Model**                   |
 | ---------------- | ---------------------------------- |
-| CPU              | Ryzen 3300x                        |
-| dGPU             | Sapphire RX 5700XT                 |
-| Mainboard        | ASRock A520m-itx/ac                |
-| NVMe             | WD Blue SN570 NVMe                 |
-| SmBios           | MacPro 7,1                         |
-| BootLoader       | OpenCore 1.0.0                     |
-| macOS            | Sequoia 15.1                       |
+| **CPU**          | AMD Ryzen 3300X                    |
+| **dGPU**         | Sapphire RX 5700XT                 |
+| **Motherboard**  | ASRock A520M-ITX/AC                |
+| **NVMe**         | WD Blue SN570 NVMe                 |
+| **SMBIOS**       | MacPro 7,1                         |
+| **Bootloader**   | OpenCore 1.0.0                     |
+| **macOS Version**| macOS 15.1 (Sequoia)               |
 
+---
 
+## Intel Wi-Fi/Bluetooth Support
 
-## Intel WIFI/BT
+To enable Intel Wi-Fi and Bluetooth on macOS, you need to install the appropriate kexts. The recommended kexts for this are:
 
-You need to manually download and install itlwm.kext (or airportitlwm.kext) to use intel WIFI
+- **itlwm.kext** (or **airportitlwm.kext**) for Intel Wi-Fi:  
+  [GitHub - itlwm](https://github.com/OpenIntelWireless/itlwm)
+  
+- **HeliPort**: A macOS menu bar app to manage Intel Wi-Fi connections:  
+  [GitHub - HeliPort](https://github.com/OpenIntelWireless/HeliPort)
 
-itlwm / Airportitlwm : https://github.com/OpenIntelWireless/itlwm
+---
 
-Heliport : https://github.com/OpenIntelWireless/HeliPort
+## System Functionality & Known Issues
 
+### **Working Features**:
+- Everything works as expected except for Apple Airport Card functionalities and S4 (Hibernate) sleep.
 
-## Function / Bugs
+### **To Enable Full Functionality**:
+- You can swap your Intel Wi-Fi/Bluetooth card with a natively supported one (such as the **BCM94360** or **BCM94350**), and use patches from **OpenCore Legacy Patcher (OCLP)** to ensure full support for Apple features.
 
+### **Known Bugs**:
+- **A2 Error (Boot device undetected)**: This occurs during POST because ASRock motherboards sometimes fail to detect the EFI partition, even on Windows or Linux.
+- **Intel Wi-Fi/Bluetooth**: These devices are not officially supported by macOS and may experience lag or instability.
+- **Internal USB LED Controller (Port 11)**: The internal USB LED controller is disabled due to erratic behavior and potential system lag.
 
-### Functions:
+---
 
-Everything works except Apple airportcard required functions, and S4(Hibernation) sleep.
+## SMBIOS Configuration
 
-You may swap your wifi card into natively supported devices, such as BCM94360 or BCM94350, with patches from OCLP to work these functions properly.
+This EFI uses the **MacPro 7,1** SMBIOS, which is recommended for optimal compatibility with modern AMD Ryzen CPUs.
 
+### **Creating Your Own SMBIOS**:
+To create or modify your own **MacPro 7,1** SMBIOS, use **GenSMBIOS**:
 
+- [GenSMBIOS GitHub Repository](https://github.com/corpnewt/GenSMBIOS)
 
-### Bugs:
+---
 
-- A2 Error (Boot device undetected) during POST, because ASRock motherboards sometimes cannot detect EFI partition (Even Windows and Linux) during POST.
-- Intel Wi-Fi/Bluetooth are not officially supported in MacOS, they could be laggy.
-- Internal USB LED controller (Port 11) is disabled due to laggy behavior. The USB
+## Creating a macOS Bootable USB
 
+Follow the Dortania guide to create a bootable macOS USB from either Windows or macOS:
 
-#### Internal USB LED controller bugs:
+- [Dortania OpenCore Install Guide](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/)
 
+### Steps:
+1. **Download the EFI folder** from this guide and copy it to your USB drive.
+2. Replace the **SMBIOS** parameters with your own.
+3. Ensure that your USB drive is set up properly using the instructions from Dortania.
 
+---
 
+## BIOS Settings for ASRock A520M-ITX/AC
 
+To ensure compatibility with macOS, adjust the following BIOS settings:
 
+### **Enable**:
+- **Resizable BAR Support**
+- **Above 4G Decoding**
 
-## SMBIOS
+### **Disable**:
+- **CSM Support** (Compatibility Support Module)
 
-This hackintosh EFI uses MacPro 7,1 SMBIOS.
+---
 
-Create your own MacPro 7,1 SMBIOS with GenSMBIOS
+## Multi-Booting with Windows
 
-https://github.com/corpnewt/GenSMBIOS
+### **Disabling ACPI injections**:
+If you're dual-booting Windows and macOS on your Ryzen system, it's recommended to disable ACPI injections to avoid BSODs and other issues in Windows.
 
+Use the **OpenCore_NO_ACPI_Build** to prevent ACPI-related conflicts.
 
+### Steps:
+1. Download the **OpenCore_NO_ACPI_Build** version that matches your current OpenCore version:  
+   [OpenCore_NO_ACPI_Build Releases](https://github.com/wjz304/OpenCore_NO_ACPI_Build/releases)
+2. Extract the files and replace the following in your EFI folder:
+    - **BootX64.efi** (in `EFI/Boot`)
+    - **OpenCore.efi** (in `EFI/OC`)
+    - Any **Drivers** and **Tools** you use in the respective folders (`EFI/OC/Drivers`, `EFI/OC/Tools`)
+3. Modify the `config.plist`:
+    - Under **ACPI/Quirks**, add:  
+      `EnableForAll` (Type: **Boolean**) → **False**
+    - Under **Booter/Quirks**, add:  
+      `EnableForAll` (Type: **Boolean**) → **False**
 
-## MacOS bootable USB creation
+This will help ensure that ACPI modifications don't affect your Windows installation.
 
-- Read the Dortania guide for creating your USB from Windows or macOS
-- [Guide Dortania](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/) - USB creation
-- Download EFI and copy it to your USB drive.
-- Replace SMBIOS parameters.
+---
 
+## Conclusion
 
-## Bios settings
+This Hackintosh guide provides the necessary steps to set up macOS on an ASRock A520M-ITX/AC motherboard with an AMD Ryzen CPU and NAVI GPU. While most functionality works well, note that some bugs may arise, particularly with Intel Wi-Fi and Bluetooth. With the right patches and kexts, you can ensure a smooth macOS experience on this hardware.
 
-
-### Enable :
-Resizable BAR Support / 
-Above 4G encoding
-
-
-
-### Disable : 
-CSM Support
-
-
-
-## Disable ACPI injections for OS multi booting by using OpenCore_NO_ACPI_Build
-
-Ryzentosh requires a lot of SSDT / Patch / Quirks modifications, which are the main reasons of BSOD in Windows.
-
-If you are dual-booting both Ryzen hackintosh and Windows OS, I recommand to use NO_ACPI_Build version of OC.
-
-
-
-### How to:
-
-Download the correct OpenCore_NO_ACPI_Build that matches your OpenCore version and unzip it 
-
-https://github.com/wjz304/OpenCore_NO_ACPI_Build/releases
-
-Replace the following files in your EFI Folder:
-
-    BootX64.efi (in EFI/Boot)
-    OpenCore.efi (in EFI/OC)
-    Any Drivers you use (in EFI/OC/Drivers)
-    Any Tools you use (in EFI/OC/Tools)
-
-Add the following Keys to your config.plist:
-
-    Under ACPI/Quirks, add: EnableForAll (Type: Boolean) and set it to False
-    Under Booter/Quirks, add: EnableForAll (Type: Boolean) and set it to False
