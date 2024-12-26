@@ -40,13 +40,16 @@ You may swap your wifi card into natively supported devices, such as BCM94360 or
 
 ### Bugs:
 
-- Random blackscreen during POST. Changing securebootmodel into "Disabled" seems mitigate random blackscreen.
-- A2 Error (Boot device undetected) during POST.
-- Since intel Wi-Fi/Bluetooth are not officially supported in MacOS, it might be laggy.
+- A2 Error (Boot device undetected) during POST, because ASRock motherboards sometimes cannot detect EFI partition (Even Windows and Linux) during POST.
+- Intel Wi-Fi/Bluetooth are not officially supported in MacOS, they could be laggy.
+- Internal USB LED controller (Port 11) is disabled due to laggy behavior. The USB
 
-ASRock motherboards are actually not good for hackintoshing, change your motherboard into different manufactures such as ASUS,GIGABYTE may resolve A2 Boot errors.
 
-Plus, instead of disabling Apple secureboot, you may try manual boot config with efibootmgr : https://www.reddit.com/r/hackintosh/comments/fj3zrj/booting_opencore_without_the_usb_on_an_asrock/
+#### Internal USB LED controller bugs:
+
+
+
+
 
 
 ## SMBIOS
@@ -79,12 +82,6 @@ Above 4G encoding
 ### Disable : 
 CSM Support
 
-
-## (Optional) Adobe support for ryzen hackintosh devices
-
-https://github.com/NyaomiDEV/AMDFriend
-
-Since photoshop 25, no adobe patch is required.
 
 
 ## Disable ACPI injections for OS multi booting by using OpenCore_NO_ACPI_Build
