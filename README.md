@@ -85,7 +85,7 @@ To ensure compatibility with macOS, adjust the following BIOS settings:
 
 ---
 
-## Multi-Booting with Windows
+## Multi-Booting with Windows (Optional)
 
 ### **Disabling ACPI injections**:
 If you're dual-booting Windows and macOS on your Ryzen system, it's recommended to disable ACPI injections to avoid BSODs and other issues in Windows.
