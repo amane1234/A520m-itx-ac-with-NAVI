@@ -66,7 +66,7 @@ Follow the Dortania guide to create a bootable macOS USB from either Windows or 
 - [Dortania OpenCore Install Guide](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/)
 
 ### Steps:
-1. **Download the EFI folder** from this guide and copy it to your USB drive.
+1. **Download the EFI folder** from this release tap and copy it to your USB EFI partition.
 2. Replace the **SMBIOS** parameters with your own.
 3. Ensure that your USB drive is set up properly using the instructions from Dortania.
 
