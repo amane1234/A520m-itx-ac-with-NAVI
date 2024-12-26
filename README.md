@@ -9,7 +9,7 @@
 
 ## Desktop Specifications
 
-| **Component**    | **Brand/Model**                   |
+| **Component**    | **Brand/Model**                    |
 | ---------------- | ---------------------------------- |
 | **CPU**          | AMD Ryzen 3300X                    |
 | **dGPU**         | Sapphire RX 5700XT                 |
@@ -44,7 +44,7 @@ To enable Intel Wi-Fi and Bluetooth on macOS, you need to install the appropriat
 ### **Known Bugs**:
 - **A2 Error (Boot device undetected)**: This occurs during POST because ASRock motherboards sometimes fail to detect the EFI partition, even on Windows or Linux.
 - **Intel Wi-Fi/Bluetooth**: These devices are not officially supported by macOS and may experience lag or instability.
-- **Internal USB LED Controller (Port 11)**: The internal USB LED controller is disabled due to erratic behavior and potential system lag.
+- **Internal USB LED Controller (Port 11)**: The internal USB LED controller is disabled due to erratic behavior during shutdown and reboot. The LED controller cannot be turned off via the S5 call from macOS.
 
 ---
 
@@ -105,11 +105,6 @@ Use the **OpenCore_NO_ACPI_Build** to prevent ACPI-related conflicts.
     - Under **Booter/Quirks**, add:  
       `EnableForAll` (Type: **Boolean**) → **False**
 
-This will help ensure that ACPI modifications don't affect your Windows installation.
+This will ensure that ACPI modifications don't affect other operating systems.
 
 ---
-
-## Conclusion
-
-This Hackintosh guide provides the necessary steps to set up macOS on an ASRock A520M-ITX/AC motherboard with an AMD Ryzen CPU and NAVI GPU. While most functionality works well, note that some bugs may arise, particularly with Intel Wi-Fi and Bluetooth. With the right patches and kexts, you can ensure a smooth macOS experience on this hardware.
-
