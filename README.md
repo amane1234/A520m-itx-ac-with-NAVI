@@ -16,8 +16,7 @@
 | **Motherboard**  | ASRock A520M-ITX/AC                |
 | **NVMe**         | WD Blue SN570 NVMe                 |
 | **SMBIOS**       | MacPro 7,1                         |
-| **Bootloader**   | OpenCore 1.0.0                     |
-| **macOS Version**| macOS 15.1 (Sequoia)               |
+| **macOS Version**| macOS 15.5 (Sequoia)               |
 
 ---
 
