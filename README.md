@@ -32,18 +32,13 @@ To enable Intel Wi-Fi and Bluetooth on macOS, you need to install the appropriat
 
 ---
 
-## System Functionality & Known Issues
+## Known Issues
 
-### **Working Features**:
-- Everything works as expected except for Apple Airport Card functionalities and S4 (Hibernate) sleep.
-
-### **To Enable Full Functionality**:
-- You can swap your Intel Wi-Fi/Bluetooth card with a natively supported one (such as the **BCM94360** or **BCM94350**), and use patches from **OpenCore Legacy Patcher (OCLP)** to ensure full support for Apple features.
-
-### **Known Bugs**:
 - **A2 Error (Boot device undetected)**: This occurs during POST because ASRock motherboards sometimes fail to detect the EFI partition, even on Windows or Linux.
+  
 - **Intel Wi-Fi/Bluetooth**: These devices are not officially supported by macOS and may experience lag or instability.
-- **Internal USB LED Controller (Port 11)**: The internal USB LED controller is disabled due to erratic behavior during shutdown and reboot. The LED controller cannot be turned off via the S5 call from macOS.
+  
+- **Internal USB LED Controller (Port 11)**: Motherboard's USB LED controller is disabled due to erratic behavior during shutdown and reboot. This LED controller cannot be turned off via the S5 call from macOS.
 
 ---
 
@@ -84,12 +79,7 @@ To ensure compatibility with macOS, adjust the following BIOS settings:
 
 ---
 
-## Multi-Booting with Windows (Optional)
-
-### **Disabling ACPI injections**:
-If you're dual-booting Windows and macOS on your Ryzen system, it's recommended to disable ACPI injections to avoid BSODs and other issues in Windows.
-
-Use the **OpenCore_NO_ACPI_Build** to prevent ACPI-related conflicts.
+## **Disabling ACPI injections with NO ACPI BUILD (optional)**:
 
 ### Steps:
 1. Download the **OpenCore_NO_ACPI_Build** version that matches your current OpenCore version:  
